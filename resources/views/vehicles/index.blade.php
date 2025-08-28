@@ -27,7 +27,8 @@
                                     <td>{{ $vehicle->model}}</td>
                                     <td>{{ $vehicle->color}}</td> 
                                     <td>{{ $vehicle->user->name }}</td>  
-                                    <td><a href="{{route('vehicles.show',$vehicle)}}" class="btn btn-info btn-sm">Show</a>
+                                    <td>@cand('view',$vehicle)
+                                        <a href="{{route('vehicles.show',$vehicle)}}" class="btn btn-info btn-sm">Show</a>
                                         <a href="{{route('vehicles.edit',$vehicle)}}" class="btn btn-info btn-sm">Edit</a>
                                         <a onclick ="return confirm('Are you sure you want to delete this vehicle?') || event.preventDefault();" href="{{route('vehicles.destroy',$vehicle)}}" class="btn btn-danger">Delete</a>
                                     </td> 

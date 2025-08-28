@@ -48,7 +48,7 @@ class VehicleController extends Controller
 
      public function show (Vehicle $vehicle) //laravel model binding
    {
-
+      $this->authorize('view', $inventory);
       return view ('vehicles.show', compact ('vehicle'));
 
    }
