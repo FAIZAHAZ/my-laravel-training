@@ -51,4 +51,32 @@ class UserController extends Controller
 
    }
 
+    public function edit (User $user) //laravel model binding
+   {
+
+      return view ('users.edit', compact ('user'));
+
+   }
+
+      public function update (Request $request, User $user)
+   {
+      //update using model
+      $user->id = $request ->id;
+      $user->name = $request ->name;
+      $user->email = $request ->email;
+      $user->save();
+
+      //return to index
+      return redirect('/users');
+   }
+
+   
+      public function destroy(User $user)
+   {
+      $user->delete();
+
+      return redirect('/users');
+
+   }
+
 }

@@ -45,6 +45,9 @@
                      <li class "nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">Senarai Pengguna</a>
                     </li>
+                    <li class "nav-item">
+                        <a class="nav-link" href="{{route('users.create')}}">Borang Daftar Pengguna</a>
+                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -49,6 +49,8 @@ class InventoryController extends Controller
    public function show (Inventory $inventory) //laravel model binding
    {
 
+      $this->authorize('view', $inventory);
+
       return view ('inventories.show', compact ('inventory'));
 
    }
@@ -56,14 +58,14 @@ class InventoryController extends Controller
      public function edit (Inventory $inventory) //laravel model binding
    {
 
-
+      $this->authorize('update', $inventory);
       return view ('inventories.edit', compact ('inventory'));
 
    }
 
    public function update(Request $request, Inventory $inventory)
    {
-
+      $this->authorize('update', $inventory);
       //update using model
       $inventory->name = $request ->name;
       $inventory->qty = $request ->quantity;
@@ -77,6 +79,9 @@ class InventoryController extends Controller
 
    public function destroy(Inventory $inventory)
    {
+      
+      $this->authorize('delete', $inventory);
+
       $inventory->delete();
 
       return redirect('/inventories');
