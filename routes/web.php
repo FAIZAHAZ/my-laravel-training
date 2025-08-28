@@ -5,6 +5,7 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\APIPostController;
+use App
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,3 +42,5 @@ Route::post('/users/{user}/edit',[UserController::class,'update'])->name('users.
 Route::get('/users/{user}/destroy',[UserController::class,'destroy'])->name('users.destroy');
 
 Route::get('posts', [APIPostController::class, 'index'])->name('posts.index');
+
+Route::get('/send-mail',[InventoryController::class,'sendMail'])->name('send.mail');
