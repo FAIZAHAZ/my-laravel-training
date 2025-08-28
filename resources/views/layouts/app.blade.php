@@ -42,6 +42,9 @@
                      <li class "nav-item">
                         <a class="nav-link" href="{{route('vehicles.create')}}">Borang Daftar Kenderaan</a>
                     </li>
+                     <li class "nav-item">
+                        <a class="nav-link" href="{{route('users.index')}}">Senarai Pengguna</a>
+                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

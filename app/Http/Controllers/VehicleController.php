@@ -16,7 +16,7 @@ class VehicleController extends Controller
    {
 
     //query all inventories from the table 'inventories' using model
-    $vehicles = Vehicle::all();
+    $vehicles = Vehicle::latest()->get();
     //return to view with $inventories (resources/views/inventories/index.blade.php)
     return view('vehicles.index', compact('vehicles'));
    } //
